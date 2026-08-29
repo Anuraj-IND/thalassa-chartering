@@ -151,25 +151,27 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <Bar $solid={solid || open}>
-      <Inner>
-        <Word href="#home" aria-label={`${brand.name} home`}>
-          <span className="mark"><Anchor size={24} /></span>
-          <span className="name">{brand.name}</span>
-        </Word>
+    <>
+      <Bar $solid={solid || open}>
+        <Inner>
+          <Word href="#home" aria-label={`${brand.name} home`}>
+            <span className="mark"><Anchor size={24} /></span>
+            <span className="name">{brand.name}</span>
+          </Word>
 
-        <Links>
-          {nav.links.map((l) => (
-            <a key={l.label} href={l.href}>{l.label}</a>
-          ))}
-        </Links>
+          <Links>
+            {nav.links.map((l) => (
+              <a key={l.label} href={l.href}>{l.label}</a>
+            ))}
+          </Links>
 
-        <Cta href={nav.cta.href}>{nav.cta.label}</Cta>
+          <Cta href={nav.cta.href}>{nav.cta.label}</Cta>
 
-        <Burger aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
-          {open ? <Close /> : <Menu />}
-        </Burger>
-      </Inner>
+          <Burger aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
+            {open ? <Close /> : <Menu />}
+          </Burger>
+        </Inner>
+      </Bar>
 
       <Sheet $open={open}>
         {nav.links.map((l) => (
@@ -177,6 +179,6 @@ export default function Navbar() {
         ))}
         <a className="m-cta" href={nav.cta.href} onClick={() => setOpen(false)}>{nav.cta.label}</a>
       </Sheet>
-    </Bar>
+    </>
   );
 }
