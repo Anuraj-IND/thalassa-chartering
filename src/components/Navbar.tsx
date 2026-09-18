@@ -56,7 +56,7 @@ const Word = styled.a`
 
 const Logo = styled.img`
   display: block;
-  height: 38px;
+  height: 24px;
   width: auto;
 `;
 
@@ -584,7 +584,7 @@ export default function Navbar() {
               {open ? <Close /> : <Menu />}
             </Burger>
             <Word href="#home" aria-label={`${brand.name} home`}>
-              <Logo src="/images/incworx-logo.png" alt={brand.name} />
+              <Logo src="/images/incworx-logo-white.jpg" alt={brand.name} />
             </Word>
           </Left>
 

@@ -23,7 +23,7 @@ const Grid = styled(Container)`
 const Brand = styled.div`
   .logo {
     display: block;
-    height: 40px;
+    height: 26px;
     width: auto;
   }
   .blurb {
@@ -99,7 +99,7 @@ export default function Footer() {
     <Wrap>
       <Grid as="div">
         <Brand>
-          <img className="logo" src="/images/incworx-logo.png" alt={brand.name} />
+          <img className="logo" src="/images/incworx-logo-white.jpg" alt={brand.name} />
           <p className="blurb">{footer.blurb}</p>
           <div className="social">
             {footer.social.map((s) => {
