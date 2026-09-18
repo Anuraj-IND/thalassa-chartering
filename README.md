@@ -49,15 +49,15 @@ src/
     providers.tsx     # ThemeProvider + GlobalStyle
     styled.d.ts       # typed DefaultTheme
   data/
-    siteData.ts       # ALL placeholder copy & data, separated from the UI
+    siteData.ts       # ALL site copy & data (company profile master brief), separated from the UI
   components/
     ui.tsx            # Container, Section, Eyebrow, SectionHead, Button, Reveal
     icons.tsx         # inline SVG icon set + icon maps
     Navbar.tsx  Hero.tsx  AboutSection.tsx
-    ServicesSection.tsx  ServiceCard.tsx  WhyIncworx.tsx  StatsSection.tsx
-    GlobalPresence.tsx  ProjectsSection.tsx  ProjectCard.tsx
-    LeadershipSection.tsx  LeaderCard.tsx  ClientsPartners.tsx
-    Certifications.tsx  Sustainability.tsx  Insights.tsx
+    ServicesSection.tsx  ServiceCard.tsx  WhyIncworx.tsx  AmbitionBand.tsx
+    CharteringSection.tsx  ProjectsSection.tsx  ProjectCard.tsx
+    DivisionsSection.tsx  GlobalPresence.tsx
+    LeadershipSection.tsx  LeaderCard.tsx  Sustainability.tsx
     CTASection.tsx  ContactSection.tsx  Footer.tsx
 public/
   assets/             # cargo-ship.webm/.mp4/.gif + poster (hero background)

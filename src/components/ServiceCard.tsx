@@ -16,6 +16,7 @@ export type Service = {
 const Card = styled.a`
   display: flex;
   flex-direction: column;
+  height: 100%;
   background: ${({ theme }) => theme.colors.white};
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.layout.radiusLg};

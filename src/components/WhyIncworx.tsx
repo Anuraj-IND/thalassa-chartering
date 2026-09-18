@@ -2,7 +2,16 @@
 
 import styled from 'styled-components';
 import { Container, Section, Eyebrow, SectionHead, Reveal } from './ui';
-import { why } from '@/data/siteData';
+import { model } from '@/data/siteData';
+
+const Flow = styled.p`
+  margin-top: 18px;
+  font-family: ${({ theme }) => theme.fonts.mono};
+  font-size: clamp(12px, 1.6vw, 15px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: ${({ theme }) => theme.colors.orange};
+`;
 
 const Grid = styled.div`
   display: grid;
@@ -14,7 +23,7 @@ const Grid = styled.div`
   overflow: hidden;
 
   @media (min-width: 640px) { grid-template-columns: 1fr 1fr; }
-  @media (min-width: 1024px) { grid-template-columns: repeat(3, 1fr); }
+  @media (min-width: 1024px) { grid-template-columns: repeat(4, 1fr); }
 `;
 
 const Item = styled.div`
@@ -38,6 +47,12 @@ const Item = styled.div`
     font-weight: 600;
     color: #fff;
   }
+  .q {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: ${({ theme }) => theme.colors.orangeLight};
+  }
   p {
     margin-top: 10px;
     font-size: 15px;
@@ -46,25 +61,40 @@ const Item = styled.div`
   }
 `;
 
+const Closing = styled.p`
+  margin-top: clamp(28px, 4vw, 44px);
+  text-align: center;
+  font-family: ${({ theme }) => theme.fonts.display};
+  font-size: clamp(20px, 2.6vw, 28px);
+  font-weight: 600;
+  color: #fff;
+`;
+
 export default function WhyIncworx() {
   return (
-    <Section id="why" $bg="navy">
+    <Section id="model" $bg="navy">
       <Container>
         <SectionHead $dark>
-          <Eyebrow>{why.eyebrow}</Eyebrow>
-          <h2>{why.heading}</h2>
+          <Eyebrow>{model.eyebrow}</Eyebrow>
+          <h2>{model.heading}</h2>
+          <p>{model.intro}</p>
+          <Flow>{model.flow}</Flow>
         </SectionHead>
         <Grid>
-          {why.items.map((it, i) => (
+          {model.items.map((it, i) => (
             <Reveal key={it.no} delay={i * 70} as="div">
               <Item>
                 <span className="no">{it.no}</span>
                 <h3>{it.title}</h3>
+                <div className="q">{it.q}</div>
                 <p>{it.text}</p>
               </Item>
             </Reveal>
           ))}
         </Grid>
+        <Reveal>
+          <Closing>{model.closing}</Closing>
+        </Reveal>
       </Container>
     </Section>
   );

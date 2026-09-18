@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Menu, Close, ArrowRight } from './icons';
 import {
   brand, nav, megaMenu, navPanels, megaRails,
-  about, services, projects, globalPresence, contact,
+  about, services, projects, globalPresence, contact, chartering,
 } from '@/data/siteData';
 
 const BAR_HEIGHT = 74;
@@ -412,35 +412,56 @@ function DropContent({ k, close }: { k: string; close: () => void }) {
   if (k === 'About') {
     return (
       <>
-        {about.blocks.map((b) => (
-          <Cell key={b.key}>
-            <Block>
-              <h5>{b.title}</h5>
-              <p>{b.text}</p>
-            </Block>
-          </Cell>
-        ))}
-        <Cell>
+        <Cell $span={2}>
+          <Block>
+            <h5>Who We Are</h5>
+            <p>{about.principle} {about.foundation}</p>
+          </Block>
+        </Cell>
+        <Cell $span={2}>
           <Rail k={k} />
         </Cell>
       </>
     );
   }
-  if (k === 'Services') {
+  if (k === 'Verticals') {
     return (
       <>
         {services.items.map((s) => (
           <Cell key={s.key}>
-            <MiniCard href={s.href} onClick={close}>
-              <img src={s.image} alt={s.title} loading="lazy" />
-              <span className="meta">
-                <span className="row">{s.title} <ArrowRight size={16} /></span>
-                <span className="txt">{s.text}</span>
-              </span>
-            </MiniCard>
+            <Block>
+              <h5>{s.title}</h5>
+              <p>{s.text}</p>
+            </Block>
           </Cell>
         ))}
+      </>
+    );
+  }
+  if (k === 'Chartering') {
+    return (
+      <>
         <Cell>
+          <Col>
+            <h4>{chartering.structuresHeading}</h4>
+            <ul>
+              {chartering.structures.map((s) => (
+                <li key={s}><a href="#chartering" onClick={close}>{s}</a></li>
+              ))}
+            </ul>
+          </Col>
+        </Cell>
+        <Cell>
+          <Col>
+            <h4>{chartering.cargoHeading}</h4>
+            <ul>
+              {chartering.cargo.map((c) => (
+                <li key={c}><a href="#chartering" onClick={close}>{c}</a></li>
+              ))}
+            </ul>
+          </Col>
+        </Cell>
+        <Cell $span={2}>
           <Rail k={k} />
         </Cell>
       </>

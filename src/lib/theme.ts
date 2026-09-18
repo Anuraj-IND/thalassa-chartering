@@ -16,8 +16,8 @@ export const theme = {
     // --- Neutrals ---
     white: '#FFFFFF',
     offWhite: '#F5F7F6',    // page background on light sections
-    headingOnLight: '#10242C',   // dark text
-    bodyOnLight: '#45575F',      // paragraph text on light
+    headingOnLight: '#062C3B',   // navy blue — headings on light (never black)
+    bodyOnLight: '#3D545E',      // paragraph text on light
     bodyOnDark: 'rgba(235, 243, 245, 0.74)',
     mutedOnDark: 'rgba(235, 243, 245, 0.52)',
     border: '#DEE5E6',           // card / divider borders on light

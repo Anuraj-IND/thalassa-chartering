@@ -19,7 +19,7 @@ const Grid = styled.div`
   gap: 26px;
 
   @media (min-width: 720px) { grid-template-columns: 1fr 1fr; }
-  @media (min-width: 1040px) { grid-template-columns: repeat(3, 1fr); }
+  @media (min-width: 1200px) { grid-template-columns: repeat(4, 1fr); }
 `;
 
 export default function ServicesSection() {

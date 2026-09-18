@@ -25,9 +25,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'INCWORX — Moving Business. Across Borders.',
+  title: 'INCWORX Intelligence Group — Intelligence that moves markets. Execution that moves business.',
   description:
-    'INCWORX brings together integrated solutions across shipping, trading and mobility, connecting businesses to global opportunities.',
+    'INCWORX Intelligence Group is a market intelligence, analytics, infrastructure and technology platform spanning Intelligence, Datamatics, Tectonics and Digitronics.',
 };
 
 export default function RootLayout({

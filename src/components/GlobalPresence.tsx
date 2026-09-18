@@ -1,61 +1,66 @@
 'use client';
 
 import styled from 'styled-components';
+import dynamic from 'next/dynamic';
 import { Container, Section, Eyebrow, SectionHead, Reveal } from './ui';
 import { globalPresence as gp } from '@/data/siteData';
+
+const WorldMap = dynamic(() => import('./WorldMap'), {
+  ssr: false,
+  loading: () => <div className="worldmap" />,
+});
 
 const Map = styled.div`
   position: relative;
   margin-top: 8px;
-  border: 1px solid ${({ theme }) => theme.colors.borderOnDark};
-  border-radius: ${({ theme }) => theme.layout.radiusLg};
-  background:
-    radial-gradient(circle, rgba(140, 180, 195, 0.34) 1.4px, transparent 1.6px);
-  background-size: 22px 22px;
-  background-color: ${({ theme }) => theme.colors.ocean};
-  aspect-ratio: 16 / 7;
-  overflow: hidden;
-  -webkit-mask-image: radial-gradient(ellipse 120% 120% at 50% 40%, #000 60%, transparent 100%);
-  mask-image: radial-gradient(ellipse 120% 120% at 50% 40%, #000 60%, transparent 100%);
-`;
 
-const Marker = styled.span<{ $x: number; $y: number; $d: number }>`
-  position: absolute;
-  left: ${({ $x }) => $x}%;
-  top: ${({ $y }) => $y}%;
-  width: 12px;
-  height: 12px;
-  transform: translate(-50%, -50%);
-
-  &::before, &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
+  .worldmap {
+    position: relative;
+    aspect-ratio: 16 / 11;
+    border: 1px solid ${({ theme }) => theme.colors.borderOnDark};
+    border-radius: ${({ theme }) => theme.layout.radiusLg};
+    overflow: hidden;
+    background: ${({ theme }) => theme.colors.ocean};
   }
-  &::before {
-    background: ${({ theme }) => theme.colors.orange};
-    box-shadow: 0 0 12px rgba(244, 122, 50, 0.8);
-  }
-  &::after {
-    border: 2px solid ${({ theme }) => theme.colors.orange};
-    animation: pulse 2.6s ease-out infinite;
-    animation-delay: ${({ $d }) => $d}ms;
+  .leaflet-container {
+    background: ${({ theme }) => theme.colors.ocean};
+    font-family: ${({ theme }) => theme.fonts.body};
   }
 
-  @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.8; }
-    70% { transform: scale(3.4); opacity: 0; }
-    100% { transform: scale(3.4); opacity: 0; }
+  @media (min-width: 640px) {
+    border: 1px solid ${({ theme }) => theme.colors.borderOnDark};
+    border-radius: ${({ theme }) => theme.layout.radiusLg};
+    background: ${({ theme }) => theme.colors.ocean};
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+
+    .worldmap {
+      position: absolute;
+      inset: 0;
+      aspect-ratio: auto;
+      border: none;
+      border-radius: 0;
+    }
   }
 `;
 
 const Note = styled.div`
-  position: absolute;
-  left: 50%;
-  bottom: 22px;
-  transform: translateX(-50%);
   text-align: center;
+  margin-top: 14px;
+  background: rgba(4, 30, 40, 0.72);
+  border: 1px solid ${({ theme }) => theme.colors.borderOnDark};
+  border-radius: 12px;
+  padding: 12px 22px;
+
+  @media (min-width: 640px) {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    margin-top: 0;
+    width: max-content;
+    max-width: 90%;
+  }
 
   .label {
     font-family: ${({ theme }) => theme.fonts.mono};
@@ -82,9 +87,7 @@ export default function GlobalPresence() {
         </SectionHead>
         <Reveal>
           <Map>
-            {gp.markers.map((m, i) => (
-              <Marker key={i} $x={m.x} $y={m.y} $d={i * 320} />
-            ))}
+            <WorldMap />
             <Note>
               <div className="label">{gp.networkLabel}</div>
               <div className="sub">{gp.networkNote}</div>

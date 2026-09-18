@@ -3,8 +3,11 @@ import Hero from '@/components/Hero';
 import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
 import WhyIncworx from '@/components/WhyIncworx';
-import GlobalPresence from '@/components/GlobalPresence';
+import AmbitionBand from '@/components/AmbitionBand';
+import CharteringSection from '@/components/CharteringSection';
 import ProjectsSection from '@/components/ProjectsSection';
+import DivisionsSection from '@/components/DivisionsSection';
+import GlobalPresence from '@/components/GlobalPresence';
 import LeadershipSection from '@/components/LeadershipSection';
 import Sustainability from '@/components/Sustainability';
 import CTASection from '@/components/CTASection';
@@ -20,8 +23,11 @@ export default function Home() {
         <AboutSection />
         <ServicesSection />
         <WhyIncworx />
-        <GlobalPresence />
+        <AmbitionBand />
+        <CharteringSection />
         <ProjectsSection />
+        <DivisionsSection />
+        <GlobalPresence />
         <LeadershipSection />
         <Sustainability />
         <CTASection />

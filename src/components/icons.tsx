@@ -173,5 +173,13 @@ export const YouTube = ({ size = 18, ...p }: IconProps) => (
 );
 
 // Map service icon keys (from siteData) to components.
-export const serviceIcons = { ship: Ship, trade: Trade, mobility: Mobility } as const;
+export const serviceIcons = {
+  ship: Ship,
+  trade: Trade,
+  mobility: Mobility,
+  intelligence: Trade,
+  datamatics: Box,
+  tectonics: DryBulk,
+  digitronics: Droplet,
+} as const;
 export const socialIcons = { LinkedIn, Instagram, YouTube } as const;

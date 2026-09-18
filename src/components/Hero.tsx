@@ -57,15 +57,24 @@ const Eyebrow = styled.span`
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #fff;
+
+  @media (max-width: 520px) {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    padding: 8px 13px;
+    line-height: 1.5;
+  }
 `;
 
 const Title = styled.h1`
   margin-top: 28px;
   color: #fff;
-  font-size: clamp(44px, 7vw, 88px);
+  font-size: clamp(36px, 11vw, 88px);
   font-weight: 700;
-  line-height: 1.02;
+  line-height: 1.04;
   letter-spacing: -0.02em;
+
+  @media (max-width: 520px) { margin-top: 22px; }
 `;
 
 const Body = styled.p`
@@ -81,6 +90,12 @@ const Actions = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+
+  @media (max-width: 520px) {
+    margin-top: 30px;
+    gap: 12px;
+    a { flex: 1 1 100%; }
+  }
 `;
 
 const Trust = styled.p`
