@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Sora, Inter, IBM_Plex_Mono } from 'next/font/google';
+import { Fraunces, Inter, IBM_Plex_Mono } from 'next/font/google';
 import StyledComponentsRegistry from '@/lib/registry';
 import Providers from '@/lib/providers';
 
-const sora = Sora({
+const display = Fraunces({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-display',
   display: 'swap',
 });
@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${sora.variable} ${inter.variable} ${plexMono.variable}`}>
+    <html lang="en" className={`${display.variable} ${inter.variable} ${plexMono.variable}`}>
       <body>
         <StyledComponentsRegistry>
           <Providers>{children}</Providers>

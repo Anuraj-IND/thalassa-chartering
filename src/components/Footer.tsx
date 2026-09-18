@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 import { Container } from './ui';
-import { Anchor, socialIcons } from './icons';
+import { socialIcons } from './icons';
 import { brand, footer } from '@/data/siteData';
 
 const Wrap = styled.footer`
@@ -21,13 +21,10 @@ const Grid = styled(Container)`
 `;
 
 const Brand = styled.div`
-  .row { display: inline-flex; align-items: center; gap: 11px; }
-  .mark { color: ${({ theme }) => theme.colors.orange}; display: flex; }
-  .name {
-    font-family: ${({ theme }) => theme.fonts.display};
-    font-weight: 700;
-    font-size: 21px;
-    letter-spacing: 0.14em;
+  .logo {
+    display: block;
+    height: 40px;
+    width: auto;
   }
   .blurb {
     margin-top: 20px;
@@ -102,10 +99,7 @@ export default function Footer() {
     <Wrap>
       <Grid as="div">
         <Brand>
-          <div className="row">
-            <span className="mark"><Anchor size={24} /></span>
-            <span className="name">{brand.name}</span>
-          </div>
+          <img className="logo" src="/images/incworx-logo.png" alt={brand.name} />
           <p className="blurb">{footer.blurb}</p>
           <div className="social">
             {footer.social.map((s) => {

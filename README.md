@@ -32,7 +32,7 @@ npm run start    # serve the production build
 | Off White | `#F5F7F6` | light page background |
 | Dark text | `#10242C` | body text on light |
 
-Fonts (via `next/font/google`): **Sora** (display), **Inter** (body),
+Fonts (via `next/font/google`): **Fraunces** (display), **Inter** (body),
 **IBM Plex Mono** (labels, eyebrows, stats).
 
 ## Structure

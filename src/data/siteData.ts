@@ -102,19 +102,6 @@ export const why = {
   ],
 };
 
-// NOTE: Numbers are intentional placeholders (XX+). Do not replace with
-// fabricated figures — swap only when verified company data is available.
-export const stats = {
-  eyebrow: 'Key Numbers',
-  heading: 'Measured by Impact.',
-  items: [
-    { value: 'XX+', label: 'Years of Experience' },
-    { value: 'XX+', label: 'Projects' },
-    { value: 'XX+', label: 'Countries Served' },
-    { value: 'XX+', label: 'Clients & Partners' },
-  ],
-};
-
 export const globalPresence = {
   eyebrow: 'Global Presence',
   heading: 'Connected to Global Markets.',
@@ -153,16 +140,6 @@ export const projects = {
       image: '/images/project-trade.jpg',
       href: '#contact',
     },
-    {
-      id: 'project-03',
-      no: 'Project 03',
-      title: 'Integrated Mobility Solutions',
-      category: 'Mobility',
-      location: 'Location coming soon',
-      description: 'Placeholder description for an integrated mobility solutions engagement.',
-      image: '/images/project-mobility.jpg',
-      href: '#contact',
-    },
   ],
 };
 
@@ -179,21 +156,6 @@ export const leadership = {
   ],
 };
 
-export const clients = {
-  eyebrow: 'Clients & Partners',
-  heading: 'Trusted Relationships.',
-  body: 'Real client and partner marks can be added here once confirmed.',
-  // Neutral placeholders only — no real or implied company logos.
-  logos: ['Client Logo', 'Partner Logo', 'Strategic Partner', 'Industry Partner', 'Client Logo', 'Partner Logo'],
-};
-
-export const certifications = {
-  eyebrow: 'Standards & Credentials',
-  heading: 'Standards & Credentials',
-  body: 'Certifications and memberships will be listed here once available.',
-  items: ['Certification', 'Industry Membership', 'Compliance Standard', 'Accreditation'],
-};
-
 export const sustainability = {
   eyebrow: 'Sustainability',
   heading: 'Moving Toward a More Responsible Future.',
@@ -206,15 +168,125 @@ export const sustainability = {
   ],
 };
 
-export const insights = {
-  eyebrow: 'Insights & Updates',
-  heading: 'Insights & Updates',
-  body: 'Ready for future CMS or API integration.',
-  articles: [
-    { category: 'Industry Insight', title: 'Perspectives on global trade and logistics.', date: 'Coming soon', image: '/images/insight-1.jpg' },
-    { category: 'Company Update', title: 'The latest from across INCWORX.', date: 'Coming soon', image: '/images/insight-2.jpg' },
-    { category: 'Market Perspective', title: 'Reading a fast-moving global market.', date: 'Coming soon', image: '/images/insight-3.jpg' },
+export const navPanels: Record<string, { rail: { heading: string; body: string; link: { label: string; href: string } } }> = {
+  About: {
+    rail: {
+      heading: 'About INCWORX',
+      body: 'A trusted partner for businesses moving across international markets.',
+      link: { label: 'More About Us', href: '#about' },
+    },
+  },
+  Services: {
+    rail: {
+      heading: 'Our Businesses',
+      body: 'Three capabilities. One connected ecosystem.',
+      link: { label: 'View All Services', href: '#services' },
+    },
+  },
+  Projects: {
+    rail: {
+      heading: 'Featured Projects',
+      body: 'A selection of engagements across shipping, trading and mobility.',
+      link: { label: 'View All Projects', href: '#projects' },
+    },
+  },
+  'Global Presence': {
+    rail: {
+      heading: 'Global Presence',
+      body: 'A network built to support businesses wherever they operate.',
+      link: { label: 'Our Network', href: '#global' },
+    },
+  },
+  Contact: {
+    rail: {
+      heading: 'Contact',
+      body: 'Reach out to INCWORX — our team will get back to you.',
+      link: { label: 'Contact Details', href: '#contact' },
+    },
+  },
+};
+
+export const megaMenu = {
+  columns: [
+    {
+      heading: 'Explore',
+      links: [
+        { label: 'About', href: '#about' },
+        { label: 'Services', href: '#services' },
+        { label: 'Why INCWORX', href: '#why' },
+        { label: 'Projects', href: '#projects' },
+      ],
+    },
+    {
+      heading: 'Global & Company',
+      links: [
+        { label: 'Global Presence', href: '#global' },
+        { label: 'Leadership', href: '#leadership' },
+        { label: 'Sustainability', href: '#sustainability' },
+        { label: 'Contact', href: '#contact' },
+      ],
+    },
+    {
+      heading: 'Businesses',
+      links: [
+        { label: 'Shipping', href: '#services' },
+        { label: 'Trading', href: '#services' },
+        { label: 'Mobility', href: '#services' },
+      ],
+    },
   ],
+  featured: {
+    heading: 'About INCWORX',
+    body: 'INCWORX brings together expertise across shipping, trading and mobility to help businesses move products, people and opportunities across markets.',
+    link: { label: 'More About Us', href: '#about' },
+  },
+  banner: {
+    image: '/images/about-port.jpg',
+    ctas: [
+      { label: 'Explore Our Services', href: '#services' },
+      { label: 'Get in Touch', href: '#contact' },
+    ],
+  },
+};
+
+// Right-rail content for the hamburger mega menu — swaps as each column link
+// is hovered (cascading-menu effect). Falls back to megaMenu.featured.
+export const megaRails: Record<string, { heading: string; body: string; link: { label: string; href: string } }> = {
+  About: navPanels.About.rail,
+  Services: navPanels.Services.rail,
+  'Why INCWORX': {
+    heading: why.heading,
+    body: 'Global perspective, integrated thinking and dependable execution for businesses operating across markets.',
+    link: { label: 'Why INCWORX', href: '#why' },
+  },
+  Projects: navPanels.Projects.rail,
+  'Global Presence': navPanels['Global Presence'].rail,
+  Leadership: {
+    heading: leadership.heading,
+    body: leadership.body,
+    link: { label: 'Meet the Team', href: '#leadership' },
+  },
+  Sustainability: {
+    heading: 'Sustainability',
+    body: sustainability.body,
+    link: { label: 'Our Approach', href: '#sustainability' },
+  },
+  Contact: navPanels.Contact.rail,
+  Shipping: {
+    heading: services.items[0].title,
+    body: services.items[0].text,
+    link: { label: 'Explore Shipping', href: '#services' },
+  },
+  Trading: {
+    heading: services.items[1].title,
+    body: services.items[1].text,
+    link: { label: 'Explore Trading', href: '#services' },
+  },
+  Mobility: {
+    heading: services.items[2].title,
+    body: services.items[2].text,
+    link: { label: 'Explore Mobility', href: '#services' },
+  },
 };
 
 export const contactCta = {
@@ -227,17 +299,13 @@ export const contactCta = {
 export const contact = {
   eyebrow: 'Contact',
   heading: "Let's talk.",
-  body: 'Share a few details and the INCWORX team will be in touch.',
+  body: 'Reach out to INCWORX — our team will get back to you.',
   info: [
     { label: 'Email', value: 'hello@incworx.example' },
     { label: 'Phone', value: '+00 000 000 0000' },
     { label: 'Head Office', value: 'Head office address coming soon' },
     { label: 'Global Offices', value: 'Global office network — details coming soon' },
   ],
-  form: {
-    services: ['Shipping', 'Trading', 'Mobility', 'General Enquiry'],
-    submit: 'Send Enquiry',
-  },
 };
 
 export const footer = {
@@ -254,7 +322,7 @@ export const footer = {
     },
     {
       heading: 'Company',
-      links: ['About', 'Insights', 'Careers', 'Sustainability', 'Contact'],
+      links: ['About', 'Careers', 'Sustainability', 'Contact'],
     },
   ],
   contact: [
