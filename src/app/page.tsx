@@ -4,6 +4,7 @@ import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
 import WhyIncworx from '@/components/WhyIncworx';
 import AmbitionBand from '@/components/AmbitionBand';
+import IntelligenceSection from '@/components/IntelligenceSection';
 import CharteringSection from '@/components/CharteringSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import DivisionsSection from '@/components/DivisionsSection';
@@ -24,6 +25,7 @@ export default function Home() {
         <ServicesSection />
         <WhyIncworx />
         <AmbitionBand />
+        <IntelligenceSection />
         <CharteringSection />
         <ProjectsSection />
         <DivisionsSection />

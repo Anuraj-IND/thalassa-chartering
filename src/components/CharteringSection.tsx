@@ -68,30 +68,6 @@ const Coverage = styled.div`
   }
 `;
 
-const Tags = styled.div`
-  margin-top: clamp(30px, 4vw, 46px);
-
-  h3 {
-    font-family: ${({ theme }) => theme.fonts.mono};
-    font-size: 12.5px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: ${({ theme }) => theme.colors.bodyOnLight};
-    margin-bottom: 16px;
-  }
-  .row { display: flex; flex-wrap: wrap; gap: 10px; }
-  span {
-    padding: 9px 16px;
-    font-size: 13.5px;
-    font-weight: 500;
-    color: ${({ theme }) => theme.colors.navy};
-    background: ${({ theme }) => theme.colors.white};
-    border: 1px solid ${({ theme }) => theme.colors.border};
-    border-radius: ${({ theme }) => theme.layout.radiusPill};
-  }
-`;
-
 const Voyage = styled.div`
   margin-top: clamp(40px, 5vw, 64px);
   background: ${({ theme }) => theme.colors.navy};
@@ -183,17 +159,6 @@ export default function CharteringSection() {
             <h3>{chartering.coverageHeading}</h3>
             <p>{chartering.coverage}</p>
           </Coverage>
-        </Reveal>
-
-        <Reveal>
-          <Tags>
-            <h3>{chartering.marketsHeading}</h3>
-            <div className="row">
-              {chartering.markets.map((m) => (
-                <span key={m}>{m}</span>
-              ))}
-            </div>
-          </Tags>
         </Reveal>
 
         <Reveal>

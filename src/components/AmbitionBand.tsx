@@ -16,38 +16,72 @@ const Head = styled.div`
   }
 `;
 
-const Figures = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1px;
-  background: ${({ theme }) => theme.colors.borderOnDark};
-  border: 1px solid ${({ theme }) => theme.colors.borderOnDark};
-  border-radius: ${({ theme }) => theme.layout.radiusLg};
-  overflow: hidden;
-
-  @media (min-width: 640px) { grid-template-columns: 1fr 1fr; }
-  @media (min-width: 1024px) { grid-template-columns: repeat(4, 1fr); }
-`;
-
-const Figure = styled.div`
-  background: ${({ theme }) => theme.colors.navy};
-  padding: clamp(26px, 3vw, 38px);
-  min-width: 0;
-  height: 100%;
+const HeroFigure = styled.div`
+  padding: clamp(8px, 2vw, 20px) 0 clamp(28px, 4vw, 48px);
 
   .value {
     font-family: ${({ theme }) => theme.fonts.mono};
-    font-size: clamp(19px, 2vw, 30px);
+    font-size: clamp(44px, 9vw, 110px);
     font-weight: 600;
     letter-spacing: 0.01em;
-    white-space: nowrap;
+    line-height: 1;
     color: ${({ theme }) => theme.colors.orange};
   }
   .label {
-    margin-top: 12px;
-    font-size: 14.5px;
-    line-height: 1.6;
+    margin-top: 16px;
+    font-family: ${({ theme }) => theme.fonts.mono};
+    font-size: clamp(12px, 1.6vw, 15px);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .lede {
+    margin-top: 18px;
+    max-width: 720px;
+    font-size: clamp(16px, 2vw, 19px);
+    line-height: 1.65;
     color: ${({ theme }) => theme.colors.bodyOnDark};
+  }
+`;
+
+const Mission = styled.div`
+  margin-top: clamp(32px, 4vw, 52px);
+  background: ${({ theme }) => theme.colors.navy};
+  border: 1px solid ${({ theme }) => theme.colors.borderOnDark};
+  border-left: 3px solid ${({ theme }) => theme.colors.orange};
+  border-radius: ${({ theme }) => theme.layout.radiusLg};
+  padding: clamp(28px, 4vw, 48px);
+
+  h3 {
+    margin-top: 16px;
+    font-size: clamp(24px, 3.2vw, 38px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #fff;
+  }
+  .body {
+    margin-top: 14px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: ${({ theme }) => theme.colors.bodyOnDark};
+  }
+  .formula {
+    margin-top: 20px;
+    font-family: ${({ theme }) => theme.fonts.mono};
+    font-size: clamp(12px, 1.5vw, 14px);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+    color: ${({ theme }) => theme.colors.orange};
+  }
+  .flow {
+    margin-top: 14px;
+    font-family: ${({ theme }) => theme.fonts.mono};
+    font-size: clamp(12px, 1.5vw, 14px);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: #fff;
   }
 `;
 
@@ -100,16 +134,22 @@ export default function AmbitionBand() {
             <h2>{ambition.heading}</h2>
           </Head>
         </Reveal>
-        <Figures>
-          {ambition.items.map((f, i) => (
-            <Reveal key={f.value} delay={i * 70} as="div">
-              <Figure>
-                <div className="value">{f.value}</div>
-                <div className="label">{f.label}</div>
-              </Figure>
-            </Reveal>
-          ))}
-        </Figures>
+        <Reveal>
+          <HeroFigure>
+            <div className="value">{ambition.figure}</div>
+            <div className="label">{ambition.figureLabel}</div>
+            <p className="lede">{ambition.lede}</p>
+          </HeroFigure>
+        </Reveal>
+        <Reveal>
+          <Mission>
+            <Eyebrow>{ambition.mission.eyebrow}</Eyebrow>
+            <h3>{ambition.mission.heading}</h3>
+            <p className="body">{ambition.mission.body}</p>
+            <p className="formula">{ambition.mission.formula}</p>
+            <p className="flow">{ambition.mission.flow}</p>
+          </Mission>
+        </Reveal>
         <Reveal>
           <Aims>
             <h3>{ambition.aimsHeading}</h3>

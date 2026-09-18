@@ -5,7 +5,7 @@
 
 export const brand = {
   name: 'INCWORX',
-  tagline: 'Market Intelligence • Chartering & Shipbroking • Dry Bulk • Tectonics • Datamatics • Digitronics',
+  tagline: 'Market Intelligence • Chartering • Dry Bulk • Tectonics • Datamatics • Digitronics',
 };
 
 export const nav = {
@@ -23,7 +23,7 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: 'Market Intelligence • Chartering & Shipbroking • Dry Bulk • Tectonics • Datamatics • Digitronics',
+  eyebrow: 'Market Intelligence • Chartering • Dry Bulk • Tectonics • Datamatics • Digitronics',
   titleLine1: 'Intelligence that moves markets.',
   titleLine2: 'Execution that moves business.',
   body:
@@ -78,7 +78,7 @@ export const services = {
       title: 'Intelligence',
       text: 'Market intelligence, commodity research and trade-flow analysis across iron ore, coal, steel and dry bulk freight.',
       image: '/images/service-shipping.jpg',
-      href: '#chartering',
+      href: '#intelligence',
     },
     {
       key: 'datamatics',
@@ -144,12 +144,9 @@ export const model = {
 export const ambition = {
   eyebrow: 'Building Toward 2030',
   heading: '2030 Business Ambition.',
-  items: [
-    { value: 'USD 5 MILLION', label: '2030 business platform driven by intelligence, infrastructure, data and technology' },
-    { value: '₹12,500 Cr', label: 'Combined project portfolio — Manki & Pavinakurve' },
-    { value: '5', label: 'Global locations across three continents' },
-    { value: '4', label: 'Integrated verticals, one approach' },
-  ],
+  figure: 'USD 5 MILLION',
+  figureLabel: '2030 Business Ambition',
+  lede: "INCWORX's 2030 ambition is to build a USD 5 million business platform driven by intelligence, infrastructure, data and technology.",
   aimsHeading: 'By 2030, INCWORX aims to',
   aims: [
     'Expand global market intelligence and commodity research.',
@@ -161,6 +158,21 @@ export const ambition = {
     'Strengthen international operating capabilities.',
     'Create long-term partnerships across commodities, maritime, infrastructure and technology.',
   ],
+  mission: {
+    eyebrow: 'Our Mission',
+    heading: 'The Intelligence and Execution Partner Behind Smarter Global Trade',
+    body: 'INCWORX transforms information into commercial advantage.',
+    formula: 'Commodity Research + Market Statistics + Data Analytics + Predictive Modelling + Chartering + Infrastructure + Technology',
+    flow: 'Insight → Decision → Transaction → Execution',
+  },
+};
+
+export const intelligence = {
+  eyebrow: 'Intelligence',
+  heading: 'Understanding Markets Before They Move',
+  body: 'INCWORX Intelligence is the foundation of the Group. We provide market intelligence and commercial insights across commodity and ocean-freight markets, combining research, statistics, industry inputs and market connectivity.',
+  areasHeading: 'Core Areas',
+  areas: ['Commodity market intelligence', 'Iron ore research', 'Pellet market research', 'Coal market intelligence', 'Steel market analysis', 'Commodity pricing', 'Import & export analysis', 'Trade-flow intelligence', 'Demand-supply analysis', 'Ocean freight intelligence', 'Dry bulk market intelligence', 'Market statistics', 'Commercial research', 'Consulting & market studies'],
 };
 
 export const chartering = {
@@ -173,8 +185,6 @@ export const chartering = {
   cargo: ['Cementitious products', 'Fertilizers', 'Iron ore', 'Coal', 'Minerals', 'Steel products', 'Grain & agricultural commodities'],
   coverageHeading: 'Geographic Coverage',
   coverage: 'Far East • Southeast Asia • Indian Ocean • Middle East / Persian Gulf • Mediterranean • West Africa • East Africa • Atlantic',
-  marketsHeading: 'Market Intelligence Covers',
-  markets: ['Commodity market intelligence', 'Iron ore research', 'Pellet market research', 'Coal market intelligence', 'Steel market analysis', 'Commodity pricing', 'Import & export analysis', 'Trade-flow intelligence', 'Demand-supply analysis', 'Ocean freight intelligence', 'Dry bulk market intelligence', 'Market statistics', 'Commercial research', 'Consulting & market studies'],
   voyage: {
     heading: 'From Fixture to Discharge',
     body: 'INCWORX supports the operational side of maritime transactions beyond the fixture.',
@@ -272,21 +282,21 @@ export const projects = {
     {
       id: 'manki',
       no: 'Project 01',
-      title: 'Manki',
-      category: 'Port Infrastructure',
-      location: 'India',
-      description: 'Port infrastructure and project development experience.',
-      image: '/images/project-maritime.jpg',
+      title: 'Manki Port Project',
+      category: 'Port Infrastructure · DBFOT',
+      location: 'Manki, Karnataka, India',
+      description: 'All-weather deepwater port development by Bederwal Consortium on Design-Build-Finance-Operate-Transfer basis — total investment outlay of ₹7,500 Crores.',
+      image: '/images/manki.jpeg',
       href: '#contact',
     },
     {
       id: 'pavinakurve',
       no: 'Project 02',
-      title: 'Pavinakurve',
-      category: 'Port Infrastructure',
-      location: 'India',
-      description: 'Port infrastructure and project development experience.',
-      image: '/images/project-trade.jpg',
+      title: 'Pavinakurve Port Project',
+      category: 'Port Infrastructure · DBFOT',
+      location: 'Pavinakurve, Karnataka, India',
+      description: 'All-weather deepwater port development by Bederwal Consortium on Design-Build-Finance-Operate-Transfer basis — investment outlay of ₹5,000 Crores.',
+      image: '/images/pavin.jpeg',
       href: '#contact',
     },
   ],
@@ -389,7 +399,7 @@ export const megaMenu = {
     {
       heading: 'Divisions',
       links: [
-        { label: 'Intelligence', href: '#services' },
+        { label: 'Intelligence', href: '#intelligence' },
         { label: 'Datamatics', href: '#datamatics' },
         { label: 'Tectonics', href: '#tectonics' },
         { label: 'Digitronics', href: '#digitronics' },
@@ -437,7 +447,7 @@ export const megaRails: Record<string, { heading: string; body: string; link: { 
   Intelligence: {
     heading: services.items[0].title,
     body: services.items[0].text,
-    link: { label: 'Explore Intelligence', href: '#chartering' },
+    link: { label: 'Explore Intelligence', href: '#intelligence' },
   },
   Datamatics: {
     heading: services.items[1].title,

@@ -23,6 +23,9 @@ const Bg = styled.video`
   height: 100%;
   object-fit: cover;
   object-position: center right;
+
+  /* Phones are portrait: re-center on the hull so the ship stays in frame. */
+  @media (max-width: 720px) { object-position: 50% center; }
 `;
 
 /* Cinematic dark-blue overlay — readable text without hiding the ship.

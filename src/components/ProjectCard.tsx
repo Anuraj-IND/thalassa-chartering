@@ -36,8 +36,9 @@ const Media = styled.a`
 
   img {
     width: 100%;
-    height: clamp(280px, 40vw, 480px);
-    object-fit: cover;
+    height: clamp(320px, 44vw, 560px);
+    object-fit: contain;
+    background: ${({ theme }) => theme.colors.navyDeep};
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
   }
   &:hover img { transform: scale(1.05); }
